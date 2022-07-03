@@ -1,0 +1,34 @@
+server:
+  port: 5000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    appname: apigateway
+    
+spring:
+  main:
+    web-application-type: reactive
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+        
+security:
+  oauth2:
+    client:
+      clientid: 2524ddefe02a02264fcd
+      clientsecret: 4ce5613a157a5a75f94bc9bffb3c0c0c167edbd0
+      accessTokenUri: https://github.com/login/oauth/access_token
+      userAuthorizationUri: https://github.com/login/oauth/authorize
+      clientAuthenticationScheme: form
+      tokenName: oauth_token
+      authenticationScheme: query
+    resource:
+      userInfoUri: https://api.github.com/user
+
+  
+

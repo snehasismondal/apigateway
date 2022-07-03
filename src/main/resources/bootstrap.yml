@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:      - id: booksloadbalancer
+        uri: lb://booksloadbalancer
+        predicates:        - Path=/books/**
+      - id: issuerservice
+        uri: lb://issuerservice
+        predicates:
+        - Path=/issuer/** 
+  active:
+    profile: dev
+
+
+
+      
+      
+      
+      
